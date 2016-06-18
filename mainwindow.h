@@ -5,6 +5,7 @@
 #include <QCameraInfo>
 #include <QMediaMetaData>
 #include <QActionGroup>
+#include "form.h"
 
 #include <QMainWindow>
 
@@ -27,10 +28,13 @@ private slots:
     void updateCameraDevice(QAction *action);
     void on_comboBox_currentIndexChanged(int index);
 
+    void on_calendarWidget_clicked(const QDate &date);
+
 private:
     Ui::MainWindow *ui;
     QCamera *camera;
     QActionGroup *videoDevicesGroup;
+    Form *form;
 };
 
 #endif // MAINWINDOW_H

@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     camera=NULL;
+    form=NULL;
     videoDevicesGroup=new QActionGroup(this);
     videoDevicesGroup->setExclusive(true);
 
@@ -49,4 +50,11 @@ void MainWindow::updateCameraDevice(QAction *action)
 void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
     updateCameraDevice(videoDevicesGroup->actions().at(index));
+}
+
+void MainWindow::on_calendarWidget_clicked(const QDate &date)
+{
+    delete form;
+    form=new Form(date);
+    form->show();
 }

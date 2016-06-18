@@ -15,11 +15,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    reminder.cpp
+    reminder.cpp \
+    doctorsappoinment.cpp \
+    form.cpp
 
 HEADERS  += mainwindow.h \
-    reminder.h
+    reminder.h \
+    doctorsappoinment.h \
+    form.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    form.ui
 target.path = $$[QT_INSTALL_EXAMPLES]/multimediawidgets/camera
 INSTALLS += target
