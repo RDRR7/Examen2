@@ -30,6 +30,8 @@ private slots:
 
     void on_calendarWidget_clicked(const QDate &date);
 
+    void on_btn_youtube_clicked();
+
 private:
     Ui::MainWindow *ui;
     QCamera *camera;

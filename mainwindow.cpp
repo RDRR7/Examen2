@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDesktopServices>
+#include <QUrl>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -57,4 +59,9 @@ void MainWindow::on_calendarWidget_clicked(const QDate &date)
     delete form;
     form=new Form(date);
     form->show();
+}
+
+void MainWindow::on_btn_youtube_clicked()
+{
+    QDesktopServices::openUrl(QUrl("http://www.youtube.com"));
 }

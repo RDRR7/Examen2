@@ -7,7 +7,6 @@ Form::Form(QDate date) :
 {
     ui->setupUi(this);
     ui->label_date->setText(date.toString());
-    ui->tableView->
 }
 
 Form::~Form()
