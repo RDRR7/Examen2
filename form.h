@@ -17,6 +17,9 @@ public:
     Form(QDate date);
     ~Form();
 
+private slots:
+    void on_pushButton_back_clicked();
+
 private:
     Ui::Form *ui;
 };
