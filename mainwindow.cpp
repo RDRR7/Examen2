@@ -25,6 +25,9 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     setCamera(QCameraInfo::defaultCamera());
+
+    ui->background->setScaledContents(true);
+    ui->background->setPixmap(QPixmap("background.jpg"));
 }
 
 MainWindow::~MainWindow()
@@ -63,5 +66,5 @@ void MainWindow::on_calendarWidget_clicked(const QDate &date)
 
 void MainWindow::on_btn_youtube_clicked()
 {
-    QDesktopServices::openUrl(QUrl("http://www.youtube.com"));
+    QDesktopServices::openUrl(QUrl("https://www.youtube.com/channel/UCvw7rZIoXbNTFBc987hjS6Q"));
 }

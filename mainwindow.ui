@@ -148,6 +148,25 @@
      <string>PushButton</string>
     </property>
    </widget>
+   <widget class="QLabel" name="background">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>681</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>background</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>btn_youtube</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

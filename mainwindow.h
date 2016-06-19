@@ -24,19 +24,28 @@ public:
     ~MainWindow();
 
 private slots:
+
+    /////////////////////SLOTS///////////////////////////////
+
     void setCamera(const QCameraInfo &cameraInfo);
     void updateCameraDevice(QAction *action);
+
+    /////////////////////////////////////////////////////////
+
     void on_comboBox_currentIndexChanged(int index);
-
     void on_calendarWidget_clicked(const QDate &date);
-
     void on_btn_youtube_clicked();
 
 private:
     Ui::MainWindow *ui;
+
+    //////////VARIABLES/////////////////
+
     QCamera *camera;
     QActionGroup *videoDevicesGroup;
     Form *form;
+
+    /////////////////////////////////////
 };
 
 #endif // MAINWINDOW_H

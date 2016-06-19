@@ -28,3 +28,6 @@ FORMS    += mainwindow.ui \
     form.ui
 target.path = $$[QT_INSTALL_EXAMPLES]/multimediawidgets/camera
 INSTALLS += target
+
+RESOURCES += \
+    resources.qrc
