@@ -138,6 +138,7 @@ void MainWindow::initAll()
     initMedia();
     ui->background->setScaledContents(true);
     ui->background->setPixmap(QPixmap("background.jpg"));
+    notes = new QList<QString>();
 
 }
 
@@ -145,4 +146,42 @@ void MainWindow::on_pushButton_album_clicked()
 {
     fotoAlbum *fa = new fotoAlbum();
     fa->setVisible(true);
+}
+
+void MainWindow::on_pushButton_addNote_clicked()
+{
+   QString _note = ui->plainTextEdit->toPlainText();
+   if(_note != "")
+   {
+        if(!notes->isEmpty())
+            currentNote++;
+        notes->append(_note);
+        ui->plainTextEdit->clear();
+   }
+}
+
+void MainWindow::on_pushButton_deleteNote_clicked()
+{
+    if(notes->isEmpty()){return;}
+    notes->removeAt(currentNote);
+}
+
+void MainWindow::on_pushButton_forwardNote_clicked()
+{
+    if(notes->isEmpty()){return;}
+    if(currentNote+1 < notes->size())
+    {
+        currentNote++;
+        ui->plainTextEdit->setPlainText(notes->at(currentNote));
+    }
+}
+
+void MainWindow::on_pushButton_backwardNote_clicked()
+{
+    if(notes->isEmpty()){return;}
+    if(currentNote-1 >= 0)
+    {
+        currentNote--;
+        ui->plainTextEdit->setPlainText(notes->at(currentNote));
+    }
 }

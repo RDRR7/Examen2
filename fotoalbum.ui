@@ -26,7 +26,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="foto">
+  <widget class="QLabel" name="image">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -48,8 +48,11 @@
      <height>125</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/up.jpg);</string>
+   </property>
    <property name="text">
-    <string>up</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_down">
@@ -61,8 +64,11 @@
      <height>125</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/down.jpg);</string>
+   </property>
    <property name="text">
-    <string>down</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_new">
@@ -74,8 +80,11 @@
      <height>125</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/plus.jpg);</string>
+   </property>
    <property name="text">
-    <string>new</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_delete">
@@ -87,8 +96,11 @@
      <height>125</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/delete.jpg);</string>
+   </property>
    <property name="text">
-    <string>delete</string>
+    <string/>
    </property>
   </widget>
  </widget>

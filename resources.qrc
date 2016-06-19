@@ -15,5 +15,7 @@
         <file>plus2.jpg</file>
         <file>left.jpg</file>
         <file>right.jpg</file>
+        <file>down.jpg</file>
+        <file>up.jpg</file>
     </qresource>
 </RCC>

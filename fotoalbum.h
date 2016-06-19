@@ -1,5 +1,6 @@
 #ifndef FOTOALBUM_H
 #define FOTOALBUM_H
+#include <QList>
 
 #include <QWidget>
 
@@ -15,8 +16,23 @@ public:
     explicit fotoAlbum(QWidget *parent = 0);
     ~fotoAlbum();
 
+private slots:
+    void on_pushButton_new_clicked();
+
+    void on_pushButton_delete_clicked();
+
+    void on_pushButton_up_clicked();
+
+    void on_pushButton_down_clicked();
+
 private:
     Ui::fotoAlbum *ui;
+    QString filePath = "";
+    QList<QString> *paths;
+    const QString ALBUM_NAME = "Album";
+    int imageCont = 0;
+    int currentImageIndex = 0;
+    void setImage(QString _path);
 };
 
 #endif // FOTOALBUM_H

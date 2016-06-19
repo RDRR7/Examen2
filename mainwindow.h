@@ -16,6 +16,7 @@
 #include <QStandardPaths>
 #include <QFileDialog>
 #include <QDir>
+#include <QList>
 
 #include "form.h"
 #include "fotoalbum.h"
@@ -66,6 +67,14 @@ private slots:
 
     void on_pushButton_album_clicked();
 
+    void on_pushButton_addNote_clicked();
+
+    void on_pushButton_deleteNote_clicked();
+
+    void on_pushButton_forwardNote_clicked();
+
+    void on_pushButton_backwardNote_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -74,7 +83,8 @@ private:
     QCamera *camera;
     QActionGroup *videoDevicesGroup;
     Form *form;
-
+    QList<QString> *notes;
+    int currentNote = 0;
     /////////////MULTIMEDIA//////////////
 
     QMediaPlayer *player;
