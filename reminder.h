@@ -4,20 +4,22 @@
 #include <QString>
 #include <QDate>
 #include <QTextStream>
+#include <QDataStream>
 
 class Reminder
 {
 public:
     Reminder(){}
-    Reminder(QString _description, QDate _date);
-    QString getDescription();
-    QDate getDate();
-    virtual QString getType()=0;
+    Reminder(QString _description, QDate _date, QString _type);
+    QString getDescription() const;
+    QDate getDate() const;
+    QString getType() const;
     virtual void toTxt(QTextStream *outStream)=0;
 
 private:
     QString description;
     QDate date;
+    QString type;
 };
 
 #endif // REMINDER_H

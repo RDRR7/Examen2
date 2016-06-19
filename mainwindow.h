@@ -5,9 +5,11 @@
 #include <QCameraInfo>
 #include <QMediaMetaData>
 #include <QActionGroup>
+#include <QVector>
+#include <QFile>
+#include <QDataStream>
 #include "form.h"
 #include "form_addnew.h"
-#include <QVector>
 #include "reminder.h"
 
 #include <QMainWindow>

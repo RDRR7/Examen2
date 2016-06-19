@@ -3,6 +3,7 @@
 #include <QStandardItemModel>
 #include <QFile>
 #include <QDataStream>
+#include "doctorsappoinment.h"
 
 Form::Form(QDate _date, QVector<Reminder *> *_reminders) :
     QWidget(0),
@@ -10,8 +11,8 @@ Form::Form(QDate _date, QVector<Reminder *> *_reminders) :
 {
     ui->setupUi(this);
     reminders=_reminders;
-    ui->label_date->setText(date.toString());
     date=_date;
+    ui->label_date->setText(date.toString());
     isEmpty=true;
 
     QStandardItemModel *model=new QStandardItemModel();
@@ -46,7 +47,7 @@ void Form::on_btnTxt_clicked()
 {
     if(!isEmpty)
     {
-        QFile outputFile(date.toString()+".txt");
+        QFile outputFile(QDate::currentDate()+".txt");
         outputFile.open(QIODevice::WriteOnly);
         QTextStream *outStream=new QTextStream(&outputFile);
         for(int x=0; x<reminders->size(); x++)

@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include <QDesktopServices>
 #include <QUrl>
+#include "doctorsappoinment.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,7 +17,8 @@ MainWindow::MainWindow(QWidget *parent) :
     videoDevicesGroup=new QActionGroup(this);
     videoDevicesGroup->setExclusive(true);
 
-    foreach (const QCameraInfo &cameraInfo, QCameraInfo::availableCameras()) {
+    foreach (const QCameraInfo &cameraInfo, QCameraInfo::availableCameras())
+    {
         QAction *videoDeviceAction=new QAction(cameraInfo.description(), videoDevicesGroup);
         videoDeviceAction->setCheckable(true);
         videoDeviceAction->setData(QVariant::fromValue(cameraInfo));
@@ -26,10 +29,40 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     setCamera(QCameraInfo::defaultCamera());
+
+    QFile inputFile("reminder.rem");
+    inputFile.open(QIODevice::ReadOnly);
+    QDataStream in(&inputFile);
+    int x=0;
+    while(!in.atEnd())
+    {
+        QString type;
+        in>>type;
+        if(type=="DOCTOR")
+        {
+            reminders<<new DoctorsAppoinment();
+            in>>*(DoctorsAppoinment*)reminders.at(x);
+        }
+        x++;
+    }
+    inputFile.close();
 }
 
 MainWindow::~MainWindow()
 {
+    QFile outputFile("reminder.rem");
+    outputFile.open(QIODevice::WriteOnly);
+    QDataStream out(&outputFile);
+    for(int x=0; x<reminders.size(); x++)
+    {
+        QString type=reminders.at(x)->getType();
+        out<<type;
+        if(type=="DOCTOR")
+        {
+            out<<*(DoctorsAppoinment*)reminders.at(x);
+        }
+    }
+    outputFile.close();
     delete camera;
     delete ui;
 }
