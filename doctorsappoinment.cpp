@@ -9,3 +9,13 @@ QTime DoctorsAppoinment::getTime()
 {
     return time;
 }
+
+void DoctorsAppoinment::toTxt(QTextStream *outStream)
+{
+    (*outStream)<<"Doctor: "+getDescription()+" "+ "Fecha: "+getDate().toString()+" "+ time.toString()+"\r\n";
+}
+
+QString DoctorsAppoinment::getType()
+{
+    return "Doctor";
+}

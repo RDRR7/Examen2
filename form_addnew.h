@@ -14,7 +14,7 @@ class Form_AddNew : public QWidget
     Q_OBJECT
 
 public:
-    Form_AddNew(QVector<Reminder> *_reminders);
+    Form_AddNew(QVector<Reminder*> *_reminders);
     ~Form_AddNew();
 
 private slots:
@@ -24,7 +24,7 @@ private slots:
 
 private:
     Ui::Form_AddNew *ui;
-    QVector<Reminder> *reminders;
+    QVector<Reminder*> *reminders;
 };
 
 #endif // FORM_ADDNEW_H

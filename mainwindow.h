@@ -43,7 +43,7 @@ private:
     QActionGroup *videoDevicesGroup;
     Form *form;
     Form_AddNew *form_AddNew;
-    QVector<Reminder> reminders;
+    QVector<Reminder*> reminders;
 };
 
 #endif // MAINWINDOW_H

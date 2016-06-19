@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QDate>
+#include <QVector>
+#include "reminder.h"
 
 namespace Ui {
 class Form;
@@ -13,12 +15,17 @@ class Form : public QWidget
     Q_OBJECT
 
 public:
-    //explicit Form(QWidget *parent = 0);
-    Form(QDate date);
+    Form(QDate _date, QVector<Reminder*> *_reminders);
     ~Form();
+
+private slots:
+    void on_btnTxt_clicked();
 
 private:
     Ui::Form *ui;
+    QVector<Reminder*> *reminders;
+    QDate date;
+    bool isEmpty;
 };
 
 #endif // FORM_H

@@ -29,5 +29,3 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     form.ui \
     form_addnew.ui
-target.path = $$[QT_INSTALL_EXAMPLES]/multimediawidgets/camera
-INSTALLS += target

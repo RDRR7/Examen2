@@ -145,7 +145,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>YouTube</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_rem">
@@ -158,7 +158,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>CreateReminder</string>
     </property>
    </widget>
   </widget>

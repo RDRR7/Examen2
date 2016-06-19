@@ -1,9 +1,12 @@
 #include "form_addnew.h"
 #include "ui_form_addnew.h"
 #include <QDate>
-#include <QtCore>
+#include "doctorsappoinment.h"
+#include <QTime>
+#include <QFile>
+#include <QTextStream>
 
-Form_AddNew::Form_AddNew(QVector<Reminder> *_reminders) :
+Form_AddNew::Form_AddNew(QVector<Reminder*> *_reminders) :
     QWidget(0),
     ui(new Ui::Form_AddNew)
 {
@@ -25,6 +28,5 @@ void Form_AddNew::on_btn_cancel_clicked()
 
 void Form_AddNew::on_btn_ok_clicked()
 {
-    (*reminders)<<Reminder(ui->textEdit->toPlainText(), ui->dateEdit->date());
-    qDebug()<<(*reminders)[0].getDescription();
+    (*reminders)<<new DoctorsAppoinment(ui->textEdit->toPlainText(), ui->dateEdit->date(), QTime::currentTime());
 }

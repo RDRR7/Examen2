@@ -58,7 +58,7 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
 void MainWindow::on_calendarWidget_clicked(const QDate &date)
 {
     delete form;
-    form=new Form(date);
+    form=new Form(date, &reminders);
     form->show();
 }
 
