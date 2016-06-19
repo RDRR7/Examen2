@@ -7,6 +7,7 @@
 class Reminder
 {
 public:
+    Reminder(){}
     Reminder(QString _description, QDate _date);
     QString getDescription();
     QDate getDate();

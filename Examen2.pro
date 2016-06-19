@@ -17,14 +17,17 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     reminder.cpp \
     doctorsappoinment.cpp \
-    form.cpp
+    form.cpp \
+    form_addnew.cpp
 
 HEADERS  += mainwindow.h \
     reminder.h \
     doctorsappoinment.h \
-    form.h
+    form.h \
+    form_addnew.h
 
 FORMS    += mainwindow.ui \
-    form.ui
+    form.ui \
+    form_addnew.ui
 target.path = $$[QT_INSTALL_EXAMPLES]/multimediawidgets/camera
 INSTALLS += target

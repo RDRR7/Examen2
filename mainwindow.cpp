@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     camera=NULL;
     form=NULL;
+    form_AddNew=NULL;
     videoDevicesGroup=new QActionGroup(this);
     videoDevicesGroup->setExclusive(true);
 
@@ -64,4 +65,11 @@ void MainWindow::on_calendarWidget_clicked(const QDate &date)
 void MainWindow::on_btn_youtube_clicked()
 {
     QDesktopServices::openUrl(QUrl("http://www.youtube.com"));
+}
+
+void MainWindow::on_btn_rem_clicked()
+{
+    delete form_AddNew;
+    form_AddNew=new Form_AddNew(&reminders);
+    form_AddNew->show();
 }

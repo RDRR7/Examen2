@@ -6,6 +6,9 @@
 #include <QMediaMetaData>
 #include <QActionGroup>
 #include "form.h"
+#include "form_addnew.h"
+#include <QVector>
+#include "reminder.h"
 
 #include <QMainWindow>
 
@@ -32,11 +35,15 @@ private slots:
 
     void on_btn_youtube_clicked();
 
+    void on_btn_rem_clicked();
+
 private:
     Ui::MainWindow *ui;
     QCamera *camera;
     QActionGroup *videoDevicesGroup;
     Form *form;
+    Form_AddNew *form_AddNew;
+    QVector<Reminder> reminders;
 };
 
 #endif // MAINWINDOW_H
