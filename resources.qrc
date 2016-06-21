@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>delete.jpg</file>
+        <file>plus.jpg</file>
+        <file>back.jpg</file>
+        <file>background.jpg</file>
+        <file>note.png</file>
+        <file>parent.jpg</file>
+        <file>playlist.png</file>
+        <file>play.jpg</file>
+        <file>stop.jpg</file>
+        <file>open.jpg</file>
+        <file>memories.jpg</file>
+        <file>minus2.jpg</file>
+        <file>plus2.jpg</file>
+        <file>left.jpg</file>
+        <file>right.jpg</file>
+        <file>down.jpg</file>
+        <file>up.jpg</file>
+        <file>text.jpg</file>
+        <file>baby.jpg</file>
+        <file>app.png</file>
+        <file>Photo_camera_icon.png</file>
+    </qresource>
+</RCC>

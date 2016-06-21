@@ -17,14 +17,31 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     reminder.cpp \
     doctorsappoinment.cpp \
-    form.cpp
+    form.cpp \
+    fotoalbum.cpp \
+    grocery.cpp \
+    payment.cpp \
+    meeting.cpp
 
 HEADERS  += mainwindow.h \
     reminder.h \
     doctorsappoinment.h \
-    form.h
+    form.h \
+    fotoalbum.h \
+    grocery.h \
+    payment.h \
+    meeting.h
 
 FORMS    += mainwindow.ui \
-    form.ui
+    form.ui \
+    fotoalbum.ui
 target.path = $$[QT_INSTALL_EXAMPLES]/multimediawidgets/camera
 INSTALLS += target
+
+RESOURCES += \
+    resources.qrc
+
+DISTFILES += \
+    left.jpg \
+    right.jpg \
+    text.jpg
