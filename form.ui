@@ -138,6 +138,9 @@
    <property name="text">
     <string/>
    </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton_back">
    <property name="geometry">
@@ -153,6 +156,9 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBox_type">
@@ -315,12 +321,21 @@
     <rect>
      <x>140</x>
      <y>330</y>
-     <width>131</width>
-     <height>131</height>
+     <width>130</width>
+     <height>130</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/text.jpg);</string>
+   </property>
    <property name="text">
-    <string>ToTxt</string>
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <zorder>background</zorder>

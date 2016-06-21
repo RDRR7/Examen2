@@ -43,4 +43,5 @@ RESOURCES += \
 
 DISTFILES += \
     left.jpg \
-    right.jpg
+    right.jpg \
+    text.jpg

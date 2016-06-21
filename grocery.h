@@ -12,6 +12,7 @@ public:
     void toTxt(QTextStream *outStream);
     QTime getTime() const;
 };
+
 QDataStream &operator<<(QDataStream &out, const Grocery &grocery);
 QDataStream &operator>>(QDataStream &in, Grocery &grocery);
 #endif // GROCERY_H

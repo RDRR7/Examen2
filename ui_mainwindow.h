@@ -59,6 +59,9 @@ public:
     QPushButton *pushButton_backwardNote;
     QPushButton *pushButton_addNote;
     QPushButton *pushButton_deleteNote;
+    QLabel *label_img;
+    QPushButton *pushButton_img;
+    QLabel *serverLabel;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -237,6 +240,17 @@ public:
         pushButton_deleteNote->setGeometry(QRect(1130, 610, 70, 70));
         pushButton_deleteNote->setStyleSheet(QStringLiteral("background-image: url(:/minus2.jpg);"));
         pushButton_deleteNote->setFlat(true);
+        label_img = new QLabel(centralWidget);
+        label_img->setObjectName(QStringLiteral("label_img"));
+        label_img->setGeometry(QRect(340, 560, 240, 120));
+        label_img->setStyleSheet(QStringLiteral(""));
+        pushButton_img = new QPushButton(centralWidget);
+        pushButton_img->setObjectName(QStringLiteral("pushButton_img"));
+        pushButton_img->setGeometry(QRect(30, 560, 200, 120));
+        pushButton_img->setStyleSheet(QStringLiteral("background-image: url(:/Photo_camera_icon.png);"));
+        serverLabel = new QLabel(centralWidget);
+        serverLabel->setObjectName(QStringLiteral("serverLabel"));
+        serverLabel->setGeometry(QRect(30, 0, 631, 20));
         MainWindow->setCentralWidget(centralWidget);
         background->raise();
         btn_youtube->raise();
@@ -259,6 +273,9 @@ public:
         pushButton_backwardNote->raise();
         pushButton_addNote->raise();
         pushButton_deleteNote->raise();
+        label_img->raise();
+        pushButton_img->raise();
+        serverLabel->raise();
 
         retranslateUi(MainWindow);
 
@@ -286,6 +303,9 @@ public:
         pushButton_backwardNote->setText(QString());
         pushButton_addNote->setText(QString());
         pushButton_deleteNote->setText(QString());
+        label_img->setText(QString());
+        pushButton_img->setText(QString());
+        serverLabel->setText(QString());
     } // retranslateUi
 
 };

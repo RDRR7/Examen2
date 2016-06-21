@@ -84,10 +84,12 @@ public:
         pushButton_add->setObjectName(QStringLiteral("pushButton_add"));
         pushButton_add->setGeometry(QRect(10, 330, 130, 130));
         pushButton_add->setStyleSheet(QStringLiteral("background-image: url(:/plus.jpg);"));
+        pushButton_add->setFlat(true);
         pushButton_back = new QPushButton(Form);
         pushButton_back->setObjectName(QStringLiteral("pushButton_back"));
         pushButton_back->setGeometry(QRect(270, 330, 130, 130));
         pushButton_back->setStyleSheet(QStringLiteral("background-image: url(:/back.jpg);"));
+        pushButton_back->setFlat(true);
         comboBox_type = new QComboBox(Form);
         comboBox_type->setObjectName(QStringLiteral("comboBox_type"));
         comboBox_type->setGeometry(QRect(10, 220, 391, 41));
@@ -130,7 +132,10 @@ public:
         table->setGeometry(QRect(430, 80, 401, 381));
         btn_txt = new QPushButton(Form);
         btn_txt->setObjectName(QStringLiteral("btn_txt"));
-        btn_txt->setGeometry(QRect(140, 330, 131, 131));
+        btn_txt->setGeometry(QRect(140, 330, 130, 130));
+        btn_txt->setAutoFillBackground(false);
+        btn_txt->setStyleSheet(QStringLiteral("background-image: url(:/text.jpg);"));
+        btn_txt->setFlat(true);
         background->raise();
         label_date->raise();
         Title->raise();
@@ -168,7 +173,7 @@ public:
         Title_3->setText(QApplication::translate("Form", "MESSAGE:", 0));
         Title_4->setText(QApplication::translate("Form", "HOUR:", 0));
         background->setText(QString());
-        btn_txt->setText(QApplication::translate("Form", "ToTxt", 0));
+        btn_txt->setText(QString());
     } // retranslateUi
 
 };

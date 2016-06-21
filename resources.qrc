@@ -17,5 +17,9 @@
         <file>right.jpg</file>
         <file>down.jpg</file>
         <file>up.jpg</file>
+        <file>text.jpg</file>
+        <file>baby.jpg</file>
+        <file>app.png</file>
+        <file>Photo_camera_icon.png</file>
     </qresource>
 </RCC>

@@ -33,6 +33,13 @@ void MainWindow::setCamera(const QCameraInfo &cameraInfo)
     camera->setViewfinder(ui->viewfinder);
 
     camera->start();
+
+    capture = new QCameraImageCapture(camera);
+
+    QImageEncoderSettings encoder_setting = capture->encodingSettings();
+    encoder_setting.setCodec("image/jpeg");
+    encoder_setting.setResolution(800,600);
+    capture->setEncodingSettings(encoder_setting);
 }
 
 void MainWindow::updateCameraDevice(QAction *action)
@@ -143,6 +150,7 @@ void MainWindow::initAll()
 {
     initCamera();
     initMedia();
+    InitServer();
 
     ui->background->setScaledContents(true);
     ui->background->setPixmap(QPixmap("background.jpg"));
@@ -299,3 +307,90 @@ void MainWindow::deleteAll()
     delete fa;
     delete camera;
 }
+
+void MainWindow::conexion_nueva()
+{
+    static int j = 0;
+    tcpcliente[j] = tcpservidor->nextPendingConnection();
+    connect(tcpcliente[j], SIGNAL(readyRead()), this, SLOT(leer_socketcliente()));
+    j++;
+}
+
+void MainWindow::leer_socketcliente()
+{
+    if(tcpcliente[0]->bytesAvailable() > 0)
+    {
+        QByteArray buffer;
+        buffer.resize(tcpcliente[0]->bytesAvailable());
+        tcpcliente[0]->read(buffer.data(), buffer.size());
+
+        if(QString(buffer) == "foto")
+        {
+            QImage image(takeImage());
+            QByteArray ba;
+            QBuffer buffer(&ba);
+            image.save(&buffer, "JPEG");
+            ba.append(buffer.data());
+
+            QByteArray outBlock;
+            QDataStream out(&outBlock, QIODevice::WriteOnly);
+            out.setVersion(QDataStream::Qt_5_6);
+            qint64 size = ba.size();
+            out << size << ba;
+            qDebug()<<size;
+            tcpcliente[0]->write(outBlock);
+        }
+    }
+}
+
+void MainWindow::InitServer()
+{
+    QTcpSocket socket;
+    socket.connectToHost("8.8.8.8", 53);
+    if (socket.waitForConnected())
+        address_str = socket.localAddress().toString();
+
+    ui->serverLabel->setText("ADDRESS-"+address_str);
+
+    tcpservidor = new QTcpServer(this);
+
+    tcpservidor->setMaxPendingConnections(3);
+
+    for(int i = 0; i < tcpservidor->maxPendingConnections(); i++)
+    {
+        tcpcliente[i] = new QTcpSocket(this);
+    }
+
+    QHostAddress address(address_str);
+    tcpservidor->listen(address, 51717);
+
+    connect(tcpservidor, SIGNAL(newConnection()), this, SLOT(conexion_nueva()));
+}
+
+QString MainWindow::takeImage()
+{
+    QString imgName = "imageCapture.jpg";
+    camera->setCaptureMode(QCamera::CaptureStillImage);
+    camera->searchAndLock();
+    capture->setCaptureDestination(QCameraImageCapture::CaptureToFile);
+
+    capture->capture(imgName);
+    camera->unlock();
+
+    QStringList homePath = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
+
+    ui->label_img->setScaledContents(true);
+    QPixmap image(homePath.first().split(QDir::separator()).last()+"\\"+imgName  );
+    ui->label_img->setPixmap(image);
+
+    return homePath.first().split(QDir::separator()).last()+"\\"+imgName;
+}
+
+void MainWindow::on_pushButton_img_clicked()
+{
+    takeImage();
+}
+
+void MainWindow::on_pushButton_clicked(){}
+
+

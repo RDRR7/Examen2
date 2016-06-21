@@ -70,7 +70,8 @@ OBJECTS       = debug/main.o \
 		debug/moc_fotoalbum.o
 
 DIST          = left.jpg \
-		right.jpg mainwindow.h \
+		right.jpg \
+		text.jpg mainwindow.h \
 		reminder.h \
 		doctorsappoinment.h \
 		form.h \
@@ -126,23 +127,27 @@ compiler_rcc_make_all: debug/qrc_resources.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_resources.cpp
 debug/qrc_resources.cpp: resources.qrc \
-		parent.jpg \
-		memories.jpg \
-		back.jpg \
-		plus2.jpg \
+		play.jpg \
 		delete.jpg \
+		plus2.jpg \
+		up.jpg \
+		baby.jpg \
+		minus2.jpg \
+		memories.jpg \
+		note.png \
+		text.jpg \
+		down.jpg \
 		plus.jpg \
 		right.jpg \
 		left.jpg \
+		back.jpg \
+		Photo_camera_icon.png \
+		parent.jpg \
 		stop.jpg \
+		app.png \
 		open.jpg \
-		up.jpg \
-		play.jpg \
-		down.jpg \
 		background.jpg \
-		playlist.png \
-		note.png \
-		minus2.jpg
+		playlist.png
 	C:\Qt\5.6\mingw49_32\bin\rcc.exe -name resources resources.qrc -o debug\qrc_resources.cpp
 
 compiler_moc_header_make_all: debug/moc_mainwindow.cpp debug/moc_form.cpp debug/moc_fotoalbum.cpp
@@ -274,6 +279,10 @@ debug/moc_mainwindow.cpp: ../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QCa
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qvector2d.h \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qicon.h \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QCameraImageCapture \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qcameraimagecapture.h \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediaencodersettings.h \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediabindableinterface.h \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QMediaPlayer \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediaplayer.h \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediacontent.h \
@@ -287,7 +296,6 @@ debug/moc_mainwindow.cpp: ../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QCa
 		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qnetworkconfiguration.h \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QMediaPlaylist \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediaplaylist.h \
-		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediabindableinterface.h \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QDebug \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/QSlider \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qslider.h \
@@ -304,6 +312,17 @@ debug/moc_mainwindow.cpp: ../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QCa
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QVector \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QFile \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QDataStream \
+		../../../../Qt/5.6/mingw49_32/include/QtGui/QImage \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QHostInfo \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qhostinfo.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qhostaddress.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qabstractsocket.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QNetworkInterface \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qnetworkinterface.h \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/QBuffer \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/qbuffer.h \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/QThread \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/qthread.h \
 		form.h \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/QWidget \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QDate \
@@ -312,11 +331,16 @@ debug/moc_mainwindow.cpp: ../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QCa
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QTextStream \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QTime \
 		fotoalbum.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QTcpServer \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qtcpserver.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QTcpSocket \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qtcpsocket.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QHostAddress \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/QMainWindow \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
 		mainwindow.h
-	C:\Qt\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.6/mingw49_32/mkspecs/win32-g++ -IC:/Users/JETSTEREO/Desktop/Examen2 -IC:/Qt/5.6/mingw49_32/include -IC:/Qt/5.6/mingw49_32/include/QtMultimediaWidgets -IC:/Qt/5.6/mingw49_32/include/QtMultimedia -IC:/Qt/5.6/mingw49_32/include/QtWidgets -IC:/Qt/5.6/mingw49_32/include/QtGui -IC:/Qt/5.6/mingw49_32/include/QtANGLE -IC:/Qt/5.6/mingw49_32/include/QtNetwork -IC:/Qt/5.6/mingw49_32/include/QtCore mainwindow.h -o debug\moc_mainwindow.cpp
+	C:\Qt\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.6/mingw49_32/mkspecs/win32-g++ -IC:/Users/JETSTEREO/Desktop/Examen2-ultima- -IC:/Qt/5.6/mingw49_32/include -IC:/Qt/5.6/mingw49_32/include/QtMultimediaWidgets -IC:/Qt/5.6/mingw49_32/include/QtMultimedia -IC:/Qt/5.6/mingw49_32/include/QtWidgets -IC:/Qt/5.6/mingw49_32/include/QtGui -IC:/Qt/5.6/mingw49_32/include/QtANGLE -IC:/Qt/5.6/mingw49_32/include/QtNetwork -IC:/Qt/5.6/mingw49_32/include/QtCore mainwindow.h -o debug\moc_mainwindow.cpp
 
 debug/moc_form.cpp: ../../../../Qt/5.6/mingw49_32/include/QtWidgets/QWidget \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qwidget.h \
@@ -431,7 +455,7 @@ debug/moc_form.cpp: ../../../../Qt/5.6/mingw49_32/include/QtWidgets/QWidget \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QDataStream \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QTime \
 		form.h
-	C:\Qt\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.6/mingw49_32/mkspecs/win32-g++ -IC:/Users/JETSTEREO/Desktop/Examen2 -IC:/Qt/5.6/mingw49_32/include -IC:/Qt/5.6/mingw49_32/include/QtMultimediaWidgets -IC:/Qt/5.6/mingw49_32/include/QtMultimedia -IC:/Qt/5.6/mingw49_32/include/QtWidgets -IC:/Qt/5.6/mingw49_32/include/QtGui -IC:/Qt/5.6/mingw49_32/include/QtANGLE -IC:/Qt/5.6/mingw49_32/include/QtNetwork -IC:/Qt/5.6/mingw49_32/include/QtCore form.h -o debug\moc_form.cpp
+	C:\Qt\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.6/mingw49_32/mkspecs/win32-g++ -IC:/Users/JETSTEREO/Desktop/Examen2-ultima- -IC:/Qt/5.6/mingw49_32/include -IC:/Qt/5.6/mingw49_32/include/QtMultimediaWidgets -IC:/Qt/5.6/mingw49_32/include/QtMultimedia -IC:/Qt/5.6/mingw49_32/include/QtWidgets -IC:/Qt/5.6/mingw49_32/include/QtGui -IC:/Qt/5.6/mingw49_32/include/QtANGLE -IC:/Qt/5.6/mingw49_32/include/QtNetwork -IC:/Qt/5.6/mingw49_32/include/QtCore form.h -o debug\moc_form.cpp
 
 debug/moc_fotoalbum.cpp: ../../../../Qt/5.6/mingw49_32/include/QtCore/QList \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/qlist.h \
@@ -539,7 +563,7 @@ debug/moc_fotoalbum.cpp: ../../../../Qt/5.6/mingw49_32/include/QtCore/QList \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qvector2d.h \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		fotoalbum.h
-	C:\Qt\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.6/mingw49_32/mkspecs/win32-g++ -IC:/Users/JETSTEREO/Desktop/Examen2 -IC:/Qt/5.6/mingw49_32/include -IC:/Qt/5.6/mingw49_32/include/QtMultimediaWidgets -IC:/Qt/5.6/mingw49_32/include/QtMultimedia -IC:/Qt/5.6/mingw49_32/include/QtWidgets -IC:/Qt/5.6/mingw49_32/include/QtGui -IC:/Qt/5.6/mingw49_32/include/QtANGLE -IC:/Qt/5.6/mingw49_32/include/QtNetwork -IC:/Qt/5.6/mingw49_32/include/QtCore fotoalbum.h -o debug\moc_fotoalbum.cpp
+	C:\Qt\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.6/mingw49_32/mkspecs/win32-g++ -IC:/Users/JETSTEREO/Desktop/Examen2-ultima- -IC:/Qt/5.6/mingw49_32/include -IC:/Qt/5.6/mingw49_32/include/QtMultimediaWidgets -IC:/Qt/5.6/mingw49_32/include/QtMultimedia -IC:/Qt/5.6/mingw49_32/include/QtWidgets -IC:/Qt/5.6/mingw49_32/include/QtGui -IC:/Qt/5.6/mingw49_32/include/QtANGLE -IC:/Qt/5.6/mingw49_32/include/QtNetwork -IC:/Qt/5.6/mingw49_32/include/QtCore fotoalbum.h -o debug\moc_fotoalbum.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -806,6 +830,10 @@ debug/main.o: main.cpp mainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qvector2d.h \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qicon.h \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QCameraImageCapture \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qcameraimagecapture.h \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediaencodersettings.h \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediabindableinterface.h \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QMediaPlayer \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediaplayer.h \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediacontent.h \
@@ -819,7 +847,6 @@ debug/main.o: main.cpp mainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qnetworkconfiguration.h \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QMediaPlaylist \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediaplaylist.h \
-		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediabindableinterface.h \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QDebug \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/QSlider \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qslider.h \
@@ -836,6 +863,17 @@ debug/main.o: main.cpp mainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QVector \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QFile \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QDataStream \
+		../../../../Qt/5.6/mingw49_32/include/QtGui/QImage \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QHostInfo \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qhostinfo.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qhostaddress.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qabstractsocket.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QNetworkInterface \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qnetworkinterface.h \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/QBuffer \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/qbuffer.h \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/QThread \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/qthread.h \
 		form.h \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/QWidget \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QDate \
@@ -844,6 +882,11 @@ debug/main.o: main.cpp mainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QTextStream \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QTime \
 		fotoalbum.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QTcpServer \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qtcpserver.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QTcpSocket \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qtcpsocket.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QHostAddress \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/QMainWindow \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
@@ -983,6 +1026,10 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qvector2d.h \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qicon.h \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QCameraImageCapture \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qcameraimagecapture.h \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediaencodersettings.h \
+		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediabindableinterface.h \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QMediaPlayer \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediaplayer.h \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediacontent.h \
@@ -996,7 +1043,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qnetworkconfiguration.h \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/QMediaPlaylist \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediaplaylist.h \
-		../../../../Qt/5.6/mingw49_32/include/QtMultimedia/qmediabindableinterface.h \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QDebug \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/QSlider \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qslider.h \
@@ -1013,6 +1059,17 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QVector \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QFile \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QDataStream \
+		../../../../Qt/5.6/mingw49_32/include/QtGui/QImage \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QHostInfo \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qhostinfo.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qhostaddress.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qabstractsocket.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QNetworkInterface \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qnetworkinterface.h \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/QBuffer \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/qbuffer.h \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/QThread \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/qthread.h \
 		form.h \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/QWidget \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QDate \
@@ -1021,6 +1078,11 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QTextStream \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/QTime \
 		fotoalbum.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QTcpServer \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qtcpserver.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QTcpSocket \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/qtcpsocket.h \
+		../../../../Qt/5.6/mingw49_32/include/QtNetwork/QHostAddress \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/QMainWindow \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
@@ -1087,7 +1149,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../Qt/5.6/mingw49_32/include/QtMultimediaWidgets/qtmultimediawidgetdefs.h \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/QDesktopServices \
 		../../../../Qt/5.6/mingw49_32/include/QtGui/qdesktopservices.h \
-		../../../../Qt/5.6/mingw49_32/include/QtGui/QImage \
 		doctorsappoinment.h \
 		grocery.h \
 		payment.h \
@@ -1577,7 +1638,9 @@ debug/fotoalbum.o: fotoalbum.cpp fotoalbum.h \
 		../../../../Qt/5.6/mingw49_32/include/QtCore/qfileinfo.h \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/QFileDialog \
 		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qfiledialog.h \
-		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qdialog.h
+		../../../../Qt/5.6/mingw49_32/include/QtWidgets/qdialog.h \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/QFile \
+		../../../../Qt/5.6/mingw49_32/include/QtCore/QDataStream
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\fotoalbum.o fotoalbum.cpp
 
 debug/grocery.o: grocery.cpp grocery.h \

@@ -592,6 +592,51 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="label_img">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>560</y>
+      <width>240</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_img">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>560</y>
+      <width>200</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/Photo_camera_icon.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="serverLabel">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>0</y>
+      <width>631</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>background</zorder>
    <zorder>btn_youtube</zorder>
    <zorder>comboBox</zorder>
@@ -613,6 +658,9 @@
    <zorder>pushButton_backwardNote</zorder>
    <zorder>pushButton_addNote</zorder>
    <zorder>pushButton_deleteNote</zorder>
+   <zorder>label_img</zorder>
+   <zorder>pushButton_img</zorder>
+   <zorder>serverLabel</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

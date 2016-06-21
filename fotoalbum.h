@@ -28,6 +28,7 @@ private:
     const QString ALBUM_NAME="Album";
     int imageCont;
     int currentImageIndex;
+
     void setImage(QString _path);
     void serialize();
     void unserialize();
