@@ -5,6 +5,9 @@ INPUT(
 ./debug\doctorsappoinment.o
 ./debug\form.o
 ./debug\fotoalbum.o
+./debug\grocery.o
+./debug\payment.o
+./debug\meeting.o
 ./debug\qrc_resources.o
 ./debug\moc_mainwindow.o
 ./debug\moc_form.o

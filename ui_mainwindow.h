@@ -185,6 +185,8 @@ public:
         font3.setWeight(75);
         listWidget->setFont(font3);
         listWidget->setStyleSheet(QStringLiteral("background-image: url(:/playlist.png);"));
+        listWidget->setSelectionMode(QAbstractItemView::NoSelection);
+        listWidget->setSelectionBehavior(QAbstractItemView::SelectItems);
         pushButton_stop = new QPushButton(centralWidget);
         pushButton_stop->setObjectName(QStringLiteral("pushButton_stop"));
         pushButton_stop->setGeometry(QRect(920, 580, 100, 100));

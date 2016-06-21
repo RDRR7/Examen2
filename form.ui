@@ -123,16 +123,6 @@
     <string>REMINDERS</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="table">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>60</y>
-     <width>431</width>
-     <height>401</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_add">
    <property name="geometry">
     <rect>
@@ -160,22 +150,6 @@
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/back.jpg);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_delete">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>330</y>
-     <width>130</width>
-     <height>130</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/delete.jpg);</string>
    </property>
    <property name="text">
     <string/>
@@ -210,7 +184,7 @@
    </item>
    <item>
     <property name="text">
-     <string>NOTE</string>
+     <string>PAYMENT</string>
     </property>
    </item>
    <item>
@@ -326,19 +300,42 @@
     <string/>
    </property>
   </widget>
+  <widget class="QTableView" name="table">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>80</y>
+     <width>401</width>
+     <height>381</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_txt">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>330</y>
+     <width>131</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ToTxt</string>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>label_date</zorder>
   <zorder>Title</zorder>
-  <zorder>table</zorder>
   <zorder>pushButton_add</zorder>
   <zorder>pushButton_back</zorder>
-  <zorder>pushButton_delete</zorder>
   <zorder>comboBox_type</zorder>
   <zorder>Title_2</zorder>
   <zorder>Title_3</zorder>
   <zorder>msg</zorder>
   <zorder>Title_4</zorder>
   <zorder>timeEdit</zorder>
+  <zorder>table</zorder>
+  <zorder>btn_txt</zorder>
  </widget>
  <resources/>
  <connections/>

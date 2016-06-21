@@ -18,7 +18,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QWidget>
 
@@ -29,10 +29,8 @@ class Ui_Form
 public:
     QLabel *label_date;
     QLabel *Title;
-    QTableWidget *table;
     QPushButton *pushButton_add;
     QPushButton *pushButton_back;
-    QPushButton *pushButton_delete;
     QComboBox *comboBox_type;
     QLabel *Title_2;
     QLabel *Title_3;
@@ -40,6 +38,8 @@ public:
     QLabel *Title_4;
     QTimeEdit *timeEdit;
     QLabel *background;
+    QTableView *table;
+    QPushButton *btn_txt;
 
     void setupUi(QWidget *Form)
     {
@@ -80,9 +80,6 @@ public:
         font1.setUnderline(false);
         font1.setWeight(75);
         Title->setFont(font1);
-        table = new QTableWidget(Form);
-        table->setObjectName(QStringLiteral("table"));
-        table->setGeometry(QRect(410, 60, 431, 401));
         pushButton_add = new QPushButton(Form);
         pushButton_add->setObjectName(QStringLiteral("pushButton_add"));
         pushButton_add->setGeometry(QRect(10, 330, 130, 130));
@@ -91,10 +88,6 @@ public:
         pushButton_back->setObjectName(QStringLiteral("pushButton_back"));
         pushButton_back->setGeometry(QRect(270, 330, 130, 130));
         pushButton_back->setStyleSheet(QStringLiteral("background-image: url(:/back.jpg);"));
-        pushButton_delete = new QPushButton(Form);
-        pushButton_delete->setObjectName(QStringLiteral("pushButton_delete"));
-        pushButton_delete->setGeometry(QRect(140, 330, 130, 130));
-        pushButton_delete->setStyleSheet(QStringLiteral("background-image: url(:/delete.jpg);"));
         comboBox_type = new QComboBox(Form);
         comboBox_type->setObjectName(QStringLiteral("comboBox_type"));
         comboBox_type->setGeometry(QRect(10, 220, 391, 41));
@@ -132,19 +125,25 @@ public:
         background = new QLabel(Form);
         background->setObjectName(QStringLiteral("background"));
         background->setGeometry(QRect(0, 0, 851, 471));
+        table = new QTableView(Form);
+        table->setObjectName(QStringLiteral("table"));
+        table->setGeometry(QRect(430, 80, 401, 381));
+        btn_txt = new QPushButton(Form);
+        btn_txt->setObjectName(QStringLiteral("btn_txt"));
+        btn_txt->setGeometry(QRect(140, 330, 131, 131));
         background->raise();
         label_date->raise();
         Title->raise();
-        table->raise();
         pushButton_add->raise();
         pushButton_back->raise();
-        pushButton_delete->raise();
         comboBox_type->raise();
         Title_2->raise();
         Title_3->raise();
         msg->raise();
         Title_4->raise();
         timeEdit->raise();
+        table->raise();
+        btn_txt->raise();
 
         retranslateUi(Form);
 
@@ -158,18 +157,18 @@ public:
         Title->setText(QApplication::translate("Form", "REMINDERS", 0));
         pushButton_add->setText(QString());
         pushButton_back->setText(QString());
-        pushButton_delete->setText(QString());
         comboBox_type->clear();
         comboBox_type->insertItems(0, QStringList()
          << QApplication::translate("Form", "DOCTOR", 0)
          << QApplication::translate("Form", "MARKET", 0)
-         << QApplication::translate("Form", "NOTE", 0)
+         << QApplication::translate("Form", "PAYMENT", 0)
          << QApplication::translate("Form", "MEETING", 0)
         );
         Title_2->setText(QApplication::translate("Form", "TYPE:", 0));
         Title_3->setText(QApplication::translate("Form", "MESSAGE:", 0));
         Title_4->setText(QApplication::translate("Form", "HOUR:", 0));
         background->setText(QString());
+        btn_txt->setText(QApplication::translate("Form", "ToTxt", 0));
     } // retranslateUi
 
 };

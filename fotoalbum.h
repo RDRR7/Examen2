@@ -18,21 +18,19 @@ public:
 
 private slots:
     void on_pushButton_new_clicked();
-
     void on_pushButton_delete_clicked();
-
     void on_pushButton_up_clicked();
-
     void on_pushButton_down_clicked();
 
 private:
     Ui::fotoAlbum *ui;
-    QString filePath = "";
     QList<QString> *paths;
-    const QString ALBUM_NAME = "Album";
-    int imageCont = 0;
-    int currentImageIndex = 0;
+    const QString ALBUM_NAME="Album";
+    int imageCont;
+    int currentImageIndex;
     void setImage(QString _path);
+    void serialize();
+    void unserialize();
 };
 
 #endif // FOTOALBUM_H

@@ -18,13 +18,19 @@ SOURCES += main.cpp\
     reminder.cpp \
     doctorsappoinment.cpp \
     form.cpp \
-    fotoalbum.cpp
+    fotoalbum.cpp \
+    grocery.cpp \
+    payment.cpp \
+    meeting.cpp
 
 HEADERS  += mainwindow.h \
     reminder.h \
     doctorsappoinment.h \
     form.h \
-    fotoalbum.h
+    fotoalbum.h \
+    grocery.h \
+    payment.h \
+    meeting.h
 
 FORMS    += mainwindow.ui \
     form.ui \
